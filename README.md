@@ -11,6 +11,8 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+You can see screenshots of app attached in ScreenShots folder for reference.
+
 Application  will start with Login In Page, which will authenticate user using 'Auth0'.
 For Better experience, please sign up to HeisenBerg Authentication Manager instead of 'Continue with google' option.
 
