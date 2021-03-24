@@ -1,6 +1,6 @@
 import React from "react";
 import { Header,Dropdown } from "semantic-ui-react";
-import LogoutBtn from "../Auth/LogoutBtn";
+//import LogoutBtn from "../Auth/LogoutBtn";
 import DocIcon from "../DocIcon.png";
 import Profile from "./Profile";
 
