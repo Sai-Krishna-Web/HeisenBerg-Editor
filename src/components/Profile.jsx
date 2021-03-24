@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useAuth0 } from "../Auth/react-auth0-spa";
+//import { useAuth0 } from "../Auth/react-auth0-spa";
 import LogoutBtn from "../Auth/LogoutBtn";
 
 const Profile = ({ logoutHandler,user }) => {
