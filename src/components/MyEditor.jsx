@@ -5,7 +5,7 @@ import { Button, Input, Dropdown } from 'semantic-ui-react';
 import { CompactPicker } from 'react-color';
 import { Map } from 'immutable';
 import FontPicker from 'font-picker-react';
-import DocIcon from '../DocIcon.png';
+//import DocIcon from '../DocIcon.png';
 
 
 
