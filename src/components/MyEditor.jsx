@@ -57,21 +57,26 @@ class MyEditor extends React.Component {
     title:'Untitle Doc',
     editTitle: false,
     prevSave:new Date(),
-  
-  };}
+
+  };
+
+}
+
+
 
   componentDidMount() {
     if (typeof (Storage) !== "undefined") {
+      if(localStorage.getItem('docs') !==null){
         var data = JSON.parse(localStorage.getItem('docs'));
         const content=JSON.parse(data.editor);
         setTimeout(() => {
         this.setState({title:data.title,nlineStyles:data.styles});
         this.setState({ editorState: EditorState.createWithContent(convertFromRaw(content)) });
-        
+
         //this.state.inlineStyles=data.styles;
 
         }, 1000)
-    }
+    }}
         else{
             alert("Sorry, your browser does not support web storage...");
         }
@@ -170,9 +175,9 @@ class MyEditor extends React.Component {
   onTextAlign=(e, align)=>{
     e.preventDefault();
     this.onChange(RichUtils.toggleBlockType(this.state.editorState, align));
-    
+
   }
- 
+
   render() {
     return (
         <div >
@@ -208,7 +213,7 @@ class MyEditor extends React.Component {
                 <div>
                     <Button compact size={'small'} icon={'save'} onClick={() => this.saveCurrent()} />
 
-                  
+
                     <Button compact size={'small'}>
                         <Dropdown floating icon={'trash'}>
                             <Dropdown.Menu direction={'left'}>
@@ -217,20 +222,20 @@ class MyEditor extends React.Component {
                         </Dropdown>
                     </Button>
                 </div>
-           
+
            </div>
             <div className={'saveTime'}>
               <em>Last saved on { this.saveDate() }</em>
             </div>
-        
+
             </div>
             <div>
                 <Button.Group>
                     <Button size={'mini'} icon={'undo'} onMouseDown={e=>this.onUndoClick(e)}/>
-                    
+
                     <Button size={'mini'} icon={'redo'} onMouseDown={e=>this.onRedoClick(e)}/>
                 </Button.Group>{' '}
-                <FontPicker 
+                <FontPicker
                     apiKey="AIzaSyDdA6xqqZiqD85me7hwxE496xaWuy1fwis"
                     activeFontFamily={this.state.activeFontFamily}
                     onChange={nextFont =>
@@ -275,10 +280,10 @@ class MyEditor extends React.Component {
             </div>
             <div className="editorHolder">
                 <div className="editor apply-font">
-                    <Editor editorState={this.state.editorState} 
+                    <Editor editorState={this.state.editorState}
                         onChange={this.onChange}
                         customStyleMap={this.state.inlineStyles}
-                        blockRenderMap={myBlockTypes} 
+                        blockRenderMap={myBlockTypes}
                         />
                 </div>
             </div>
